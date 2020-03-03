@@ -17,6 +17,12 @@
 
 
 
+
+
+
+
+
+
 2. (a) Data Preparation: How to Prepare the relevant Data?
                                     Is the data Clean enough to Analyze?
                                     Is the data Structured for Analysis?
@@ -39,6 +45,11 @@
 
 
 
+
+
+
+
+
 3. (a) Exploratory Analysis: How to Explore the acquired Data?
                                    How to effectively Mine the Data?
                                    How to Compute the vital Statistics?
@@ -51,6 +62,11 @@
                                         How to succinctly Represent the Data?
 Mean/Median/SD/Summary
 
+      
+      
+      
+      
+      
       
       
 4. (a) Analytic Visualization: How to clearly Visualize the Data?
@@ -68,6 +84,11 @@ Box-Plot, Histogram, Density Plot, Violin Plot
 Bi-Variate - Joint-Plot Relation (Correlation Coefficient, Correlation Matrix and Plot)
 Multi-Variate - Pair-Plot (Historgram, Scatter Plot)  
 Pattern Recognition: Distribution of Variables, Inter-Variable Dependence
+
+
+
+
+
 
 
                             
@@ -90,7 +111,12 @@ Classification: Decision Tree(GINI), Goodness of Fit-Classification Accuracy(TP/
 Clustering: K-Means (Centroid Cluster)
 Anomaly: Nearest Neighbour (Outliers)
 
-                           
+                
+                
+                
+                
+                
+                
 6. (a) Information Presentation: How to present Analysis Outcomes?
                                         How to present Descriptive Analysis?
                                         How to present Inferential Analysis?
@@ -101,7 +127,12 @@ Anomaly: Nearest Neighbour (Outliers)
                                         Can you Estimate the Confidence?
                                         How to confidently Infer from the Data?
                             
-                            
+          
+          
+          
+          
+          
+          
 7. (a) Ethical Consideration: Does the Analysis violate Legality?
                                         Does the Decision violate Ethics?
                                         How to Responsibly work in Data Science?
@@ -110,3 +141,8 @@ Anomaly: Nearest Neighbour (Outliers)
                                         Can you Decide based on the Data?
                                         Can you Optimize the Outcomes?
                                         How to Solve a real life problem by Data?
+                                        
+                                        
+                                        
+                                        
+                                        
