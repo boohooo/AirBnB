@@ -8,7 +8,8 @@
 1. (b) Practical Motivation: What is the Real-Life Problem?
                                       Can you relate the Problem to Data?
                                       Would Data help you in Practice?
-                                      How to Identify a Data Science case?                             
+                                      How to Identify a Data Science case?        
+                                      
 "How to find best suited listing for Users based on preferences"
     - listing_id based on price 
     - type of accomadation (space) 
