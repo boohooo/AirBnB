@@ -33,7 +33,7 @@ try:
     #Instead of dropping we select what we need
     listingsDF = listingsDF[['id', 'name','description', 
                              'host_id', 'host_name', 'property_type', 'price', 
-                             'number_of_reviews', 'review_scores_rating','location']]
+                             'number_of_reviews', 'review_scores_rating','location','listing_url']]
     
     #We drop all rows with empty cells - don't do that, it will affect the calendar
 #    listingsDF = listingsDF.dropna(axis=0, how='any')
@@ -51,7 +51,7 @@ try:
     # =============================================================================
     # Extract the necessary columns to be used, into a dataframe
     # =============================================================================
-    aDF = listingsDF[['id','name', 'description','location']]
+    aDF = listingsDF[['id','name', 'description','location','listing_url']]
     aDF['full_description'] = aDF['description']
     
     # =============================================================================
