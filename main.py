@@ -59,7 +59,7 @@ try: #Sometimes, if the excel file is open, the program might not run. So this s
             # =============================================================================
             # Start date
             # =============================================================================
-            canvas.create_text(160,150, text="1. Select start and end dates:", font=("Franklin Gothic Medium Cond", 20), fill="white")
+            canvas.create_text(157,150, text="1. Select start and end dates:", font=("Franklin Gothic Medium Cond", 20), fill="white")
             
             canvas.create_text(50,220, text="Start", font=("Franklin Gothic Medium Cond", 20), fill="white")            
             
@@ -237,13 +237,16 @@ try: #Sometimes, if the excel file is open, the program might not run. So this s
             dataset = topListings(user_preference, user_algoType,calendarDF)
             googleMaps(dataset)
             calendarImg(dataset)
-            dataset= dataset[['id','name','score']]
+        
+            dataset= dataset[['id','name','score','listing_url']]
             
             # Change the datatype from object to numeric
             dataset["score"] = pd.to_numeric(dataset["score"])
             dataset['score'] = dataset['score'].round(2)
-            dataset = dataset.rename(columns={"id": "ID", "name": "Name","score": "Score"})
+            dataset = dataset.rename(columns={"id": "ID", "name": "Name","score": "Score", "listing_url":"URL"})
             
+            global urldataset # to use in def wbswebsite
+            urldataset =dataset
             # =============================================================================
             # Display the ID, name, score on GUI
             # =============================================================================
@@ -286,14 +289,36 @@ try: #Sometimes, if the excel file is open, the program might not run. So this s
             # =============================================================================
             # Website
             # =============================================================================
-            webButton = tk.Button(self,text="View the listingsID on the map", width=25, height=1, bg="orange",command = self.wbbrowser)
-            webButton_window = canvas.create_window(400, 550, window=webButton)
+            webButton = tk.Button(self,text="URL", width=7, height=1, bg="pink",command = self.wbWebsite0)
+            webButton_window = canvas.create_window(660, 180, window=webButton)
+   
+            webButton = tk.Button(self,text="URL", width=7, height=1, bg="pink",command = self.wbWebsite1)
+            webButton_window = canvas.create_window(660, 220, window=webButton)
+ 
+            webButton = tk.Button(self,text="URL", width=7, height=1, bg="pink",command = self.wbWebsite2)
+            webButton_window = canvas.create_window(660, 260, window=webButton)
+ 
+            webButton = tk.Button(self,text="URL", width=7, height=1, bg="pink",command = self.wbWebsite3)
+            webButton_window = canvas.create_window(660, 300, window=webButton)
+  
+            webButton = tk.Button(self,text="URL", width=7, height=1, bg="pink",command = self.wbWebsite4)
+            webButton_window = canvas.create_window(660, 340, window=webButton)
+            
+            
+            
+            
+            mapButton = tk.Button(self,text="View the listingsID on the map", width=25, height=1, bg="orange",command = self.mapbrowser)
+            mapButton_window = canvas.create_window(400, 550, window=mapButton)
             
             backButton = tk.Button(self, text="Back", width=25, height=2, bg="lightblue",command=lambda: master.switch_frame(StartPage))
             backButton_window = canvas.create_window(400, 650, window=backButton)
-            
-        def wbbrowser(self):
+        
+        def mapbrowser(self):
             webbrowser.open_new_tab('map.html')
+        
+        # =============================================================================
+        # Open Clendar     
+        # =============================================================================
         
         def wbcalendar0(self):
             webbrowser.open_new_tab('img0.png')
@@ -309,6 +334,24 @@ try: #Sometimes, if the excel file is open, the program might not run. So this s
             
         def wbcalendar4(self):
             webbrowser.open_new_tab('img4.png')
+        
+        # =============================================================================
+        # Open URL  
+        # =============================================================================
+        def wbWebsite0(self):
+            webbrowser.open_new_tab(urldataset['URL'][0])
+        
+        def wbWebsite1(self):
+            webbrowser.open_new_tab(urldataset['URL'][1])
+            
+        def wbWebsite2(self):
+            webbrowser.open_new_tab(urldataset['URL'][2])
+            
+        def wbWebsite3(self):
+            webbrowser.open_new_tab(urldataset['URL'][3])
+            
+        def wbWebsite4(self):
+            webbrowser.open_new_tab(urldataset['URL'][4])
                 
     if __name__ == "__main__":
         app = SampleApp()
