@@ -22,13 +22,14 @@ def topListings(preference_textinput, algorithm_type,calendarDF):
      # Collate the name, score, and other columns into on edataframe
     def rec(index, aDF, scores):
         count=0
-        recdf = pd.DataFrame(columns=['name', 'description','score','id','location'])
+        recdf = pd.DataFrame(columns=['name', 'description','score','id','location','listing_url'])
         for x in index:
             recdf.at[count,'name']=aDF['name'][x]
             recdf.at[count,'description']=aDF['description'][x]
             recdf.at[count,'score']=scores[count]
             recdf.at[count,'id'] = aDF['id'][x]
             recdf.at[count,'location'] = aDF['location'][x]
+            recdf.at[count,'listing_url'] = aDF['listing_url'][x]
             count+=1
         return recdf
     
@@ -98,4 +99,3 @@ def calendarImg(dataset):
         calmap.calendarplot(events, monthticks=1, daylabels='MTWTFSS',cmap='YlGn', fillcolor='grey', linewidth=1, fig_kws=dict(figsize=(16, 4)))
         name = "img"+str(i)+".png"
         plt.savefig(name)
-        
