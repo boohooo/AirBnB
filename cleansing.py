@@ -23,29 +23,12 @@ try:
     
     listingsDF['location'] = ('(' + listingsDF['location']+')').astype(str) # add '(' to the front and ')' to the back
     
-    listingsDF['location']= listingsDF['location'].map(lambda x: eval(x)) # convert string to tuple
-    
-    #Instead of dropping we select what we need
-    listingsDF = listingsDF[['id', 'name','description', 
-                             'host_id', 'host_name', 'property_type', 'price', 
-                             'number_of_reviews', 'review_scores_rating','location','listing_url']]
-    
-    #We drop all rows with empty cells - don't do that, it will affect the calendar
-#    listingsDF = listingsDF.dropna(axis=0, how='any')
-    
-    #Remove the '$' from price
-    listingsDF.price = listingsDF.price.str.replace('[$]', '')
-    
-    #Remove the ',' from price
-    listingsDF.price = listingsDF.price.str.replace(',', '')
-    
-    #Convert price from object to float
-    listingsDF['price'] = listingsDF['price'].astype(float)
+    listingsDF['location']= listingsDF['location'].map(lambda x: eval(x)) # convert string to tuple 
     
     # =============================================================================
     # Extract the necessary columns to be used, into a dataframe
     # =============================================================================
-    aDF = listingsDF[['id','name', 'description','location','listing_url']]
+    aDF = listingsDF[['id','name', 'description','location','listing_url','beds']]
     aDF['full_description'] = aDF['description']
     
     # =============================================================================
