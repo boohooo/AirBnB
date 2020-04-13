@@ -26,15 +26,21 @@ import calmap # plot the calendar
 import matplotlib.pyplot as plt, mpld3 #export calendar into img
 
 def filterCalendar(user_startDate, user_endDate):
-    filtercalDF =calendarDF[(calendarDF['date'] <= user_endDate) & (calendarDF['date'] >= user_startDate)]
+    filtercalDF =calendarDF[(calendarDF['date'] <= user_endDate) & (calendarDF['date'] >= user_startDate)] 
+    removeCalDF =pd.DataFrame((filtercalDF[filtercalDF['available']==0]).listing_id.unique()) #get those listingsID that are booked during the date range
+    removeCalDF = removeCalDF.rename(columns={0:'listing_id'})
+    keepCalDF = filtercalDF[~filtercalDF.listing_id.isin(removeCalDF.listing_id)].dropna() #remove those listingsID that are booked during the date range
+    return keepCalDF
+
+def topListings(preference_textinput, algorithm_type,calDF,user_beds):
+    from cleansing import aDF #if never import this, aDF cannot work..
     
-    #  if num beds less than calendarDF.beds
-
-    return filtercalDF
-
-def topListings(preference_textinput, algorithm_type,calendarDF):
-    from cleansing import aDF
-    aDF=  aDF.loc[((aDF.id.isin(calendarDF['listing_id']))),:]
+    # keep those available IDs based on calendar
+    aDF=  aDF.loc[((aDF.id.isin(calDF['listing_id']))),:] 
+    
+    #  remove those listings that have insufficient beds
+    aDF = aDF[ aDF.beds >= user_beds ]
+    
     user_inputDF = pd.DataFrame(columns=['description'])
     user_inputDF['description'] = [preference_textinput]
     
