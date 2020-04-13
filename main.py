@@ -228,8 +228,8 @@ try: #Sometimes, if the excel file is open, the program might not run. So this s
             # =============================================================================
             # Magic time            
             # =============================================================================
-            calendarDF= filterCalendar(user_startDate, user_endDate)
-            dataset = topListings(user_preference, user_algoType,calendarDF)
+            calDF= filterCalendar(user_startDate, user_endDate)
+            dataset = topListings(user_preference, user_algoType,calDF,user_beds)
             googleMaps(dataset)
             calendarImg(dataset)
         
