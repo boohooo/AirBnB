@@ -38,7 +38,7 @@ try: #Sometimes, if the excel file is open, the program might not run. So this s
             canvas.create_image(405, 360, image=logo)
             canvas.image = logo  # Reference to image
     
-            canvas.create_text(420,10,text="By Wong Xin Pei, Candy Lim, Tan Jun Xuan",font=("Yu Gothic UI Semibold", 15), fill="white")
+            canvas.create_text(420,10,text="By Wong Xin Pei, Candy Lim, Tan Jun Xian",font=("Yu Gothic UI Semibold", 15), fill="white")
             canvas.create_text(420,80, text="Airbnb Recommendation System", font=("Franklin Gothic Medium Cond", 30), fill="white")
     
             # =============================================================================
@@ -217,7 +217,7 @@ try: #Sometimes, if the excel file is open, the program might not run. So this s
             canvas.create_image(405, 360, image=logo)
             canvas.image = logo  # Reference to image
     
-            canvas.create_text(420,10,text="By Wong Xin Pei, Candy Lim, Tan Jun Xuan",font=("Yu Gothic UI Semibold", 15), fill="white")
+            canvas.create_text(420,10,text="By Wong Xin Pei, Candy Lim, Tan Jun Xian",font=("Yu Gothic UI Semibold", 15), fill="white")
             
             # =============================================================================
             #  Concatenate the dates           
