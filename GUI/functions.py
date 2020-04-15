@@ -134,7 +134,7 @@ def topListings(preference_textinput, algorithm_type,calDF,user_beds):
         model.save("d2v.model")
         print("Model Saved") #For visualization later
         
-        model.docvecs['953595'] #This is where our vectors are stored in | Search by the unique tag
+        #model.docvecs['953595'] #This is where our vectors are stored in | Search by the unique tag
         
         #User input vector will be used to calculate similarity
         vector = model.infer_vector(inputtoken)
