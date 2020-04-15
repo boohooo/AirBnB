@@ -158,7 +158,8 @@ def topListings(preference_textinput, algorithm_type,calDF,user_beds):
         return results
     
 def googleMaps(dataset):
-    gmaps.configure(api_key='AIzaSyBqISZOJygJfOxnrnfRs8XlSTxZmmk94do') #please don't spread the api_key because it is my credentials, only use for this project purpose, thanks.
+    ownAPIKey= 'go_get_it_from_google_maps_api'
+    gmaps.configure(api_key=ownAPIKey)
     
     # create the info box template
     info_box_template = """
