@@ -10,11 +10,11 @@ try:
     # =============================================================================
     # Import the excel files
     # =============================================================================
-    listingsDF = pd.read_csv(r'C:\Users\Candy\OneDrive - Nanyang Technological University\Year 1 Semester 2\CZ1015\Mini Project\Git\listings.csv')
+    listingsDF = pd.read_csv(r'listings.csv')
     
-    calendarDF = pd.read_csv(r'C:\Users\Candy\OneDrive - Nanyang Technological University\Year 1 Semester 2\CZ1015\Mini Project\Git\calendar.csv')
+    calendarDF = pd.read_csv(r'calendar.csv')
     
-    reviewsDF = pd.read_csv(r'C:\Users\Candy\OneDrive - Nanyang Technological University\Year 1 Semester 2\CZ1015\Mini Project\Git\reviews.csv')
+    reviewsDF = pd.read_csv(r'reviews.csv')
 
     # =============================================================================
     # Clean the data, doing pre-processing for usage
